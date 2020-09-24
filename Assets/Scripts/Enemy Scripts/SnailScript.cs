@@ -69,7 +69,7 @@ public class SnailScript : MonoBehaviour
             {
                 if (!stunned)
                 {
-                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(topHit.gameObject.GetComponent<Rigidbody2D>().velocity.x, 7f);
+                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(topHit.gameObject.GetComponent<Rigidbody2D>().velocity.x, 16f);
 
                     canMove = false;
                     myBody.velocity = new Vector2(0, 0);
