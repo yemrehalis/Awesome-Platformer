@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Public Components
+    // Global Components
+
     public float speed = 5f;
     public Transform groundCheckPosition;
     public LayerMask groundLayer;
 
-
-    // Private components
     private Rigidbody2D myBody;
     private Animator anim;
     private bool isGrounded;
@@ -68,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    // Changing Player Face Direction
+    // Player ın Hareket Doğrultusunun Değiştirilmesi
 
     void ChangeDirection(int direction)
     {
@@ -79,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
+    // Zemin üzerinde olup olmadığının tespiti
     void CheckIfGrounded()
     {
         isGrounded = Physics2D.Raycast(groundCheckPosition.position, Vector2.down, 0.1f, groundLayer);
@@ -98,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-
+    // Player Jump Fonksiyonu
     void PlayerJump()
     {
         if (isGrounded)

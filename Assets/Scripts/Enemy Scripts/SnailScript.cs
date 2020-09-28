@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class SnailScript : MonoBehaviour
 {
-
+    // Global Değişkenler ve Component ler
     public float moveSpeed = 1f;
     public LayerMask playerLayer;
+
+   
     private Rigidbody2D myBody;
     private Animator anim;
-
     private bool moveLeft;
     private bool canMove;
     private bool stunned;
@@ -63,13 +64,19 @@ public class SnailScript : MonoBehaviour
 
 
 
-        if (topHit != null)
+        // Eğer topHit Circle Collider etkileşime girdiyse.
+        if (topHit != null) 
+
         {
-            if (topHit.gameObject.tag == "Player")
+            // Etkileşime girilen GameObject tag'ı Player ise.
+            if (topHit.gameObject.tag == "Player") 
             {
-                if (!stunned)
+                // Snail Stunned durumunda değil ise
+                if (!stunned) 
+                              
                 {
-                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(topHit.gameObject.GetComponent<Rigidbody2D>().velocity.x, 16f);
+                    // Player Rigidbody si alınır ve +Y yönünde jump artırılır.
+                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(topHit.gameObject.GetComponent<Rigidbody2D>().velocity.x, 16f); 
 
                     canMove = false;
                     myBody.velocity = new Vector2(0, 0);
@@ -83,7 +90,7 @@ public class SnailScript : MonoBehaviour
         }
 
 
-        // IF we don't detect collision any more do whats in {}
+        // Eğer Collision yok ise  ne yapılacak {}
 
         if (!Physics2D.Raycast(down_Collision.position, Vector2.down, .1f))
         {
