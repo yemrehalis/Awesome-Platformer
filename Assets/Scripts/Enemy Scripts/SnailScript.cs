@@ -57,8 +57,8 @@ public class SnailScript : MonoBehaviour
 
     void CheckCollision()
     {
-        RaycastHit2D leftHit = Physics2D.Raycast(left_Collision.position, Vector2.left, .1f, playerLayer);
-        RaycastHit2D rightHit = Physics2D.Raycast(right_Collision.position, Vector2.right, .1f, playerLayer);
+        RaycastHit2D leftHit = Physics2D.Raycast(left_Collision.position, Vector2.left, 0.1f, playerLayer);
+        RaycastHit2D rightHit = Physics2D.Raycast(right_Collision.position, Vector2.right, 0.1f, playerLayer);
 
         Collider2D topHit = Physics2D.OverlapCircle(top_Collision.position, .2f, playerLayer);
 
@@ -69,7 +69,7 @@ public class SnailScript : MonoBehaviour
 
         {
             // Etkileşime girilen GameObject tag'ı Player ise.
-            if (topHit.gameObject.tag == "Player") 
+            if (topHit.gameObject.tag == MyTags.PLAYER_TAG) 
             {
                 // Snail Stunned durumunda değil ise
                 if (!stunned) 
@@ -89,6 +89,39 @@ public class SnailScript : MonoBehaviour
             }
         }
 
+
+        if (leftHit)
+        {
+            if (leftHit.collider.gameObject.tag == MyTags.PLAYER_TAG)
+            {
+                if (!stunned)
+
+                {
+                    // Apply damage to player
+                    print("Damage Left");
+                }
+                else
+                {
+                    myBody.velocity = new Vector2(15f, myBody.velocity.y);
+                }
+            }
+        }
+
+        if (rightHit)
+        {
+            if (rightHit.collider.gameObject.tag == MyTags.PLAYER_TAG)
+            {
+                if (!stunned)
+                {
+                    // Apply damage to Player
+                    print("Damage Right");
+                }
+                else
+                {
+                    myBody.velocity = new Vector2(-15f, myBody.velocity.y);
+                }
+            }
+        }
 
         // Eğer Collision yok ise  ne yapılacak {}
 
