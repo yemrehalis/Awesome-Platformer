@@ -15,7 +15,7 @@ public class SnailScript : MonoBehaviour
     private bool canMove;
     private bool stunned;
 
-    public Transform left_Collision, right_Collision, top_Collision,down_Collision;
+    public Transform left_Collision, right_Collision, top_Collision,bottom_Collision;
     private Vector3 left_Collision_Pos, right_Collision_Pos;
 
 
@@ -76,7 +76,7 @@ public class SnailScript : MonoBehaviour
                               
                 {
                     // Player Rigidbody si alınır ve +Y yönünde jump artırılır.
-                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(topHit.gameObject.GetComponent<Rigidbody2D>().velocity.x, 16f); 
+                    topHit.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(topHit.gameObject.GetComponent<Rigidbody2D>().velocity.x, 12f); 
 
                     canMove = false;
                     myBody.velocity = new Vector2(0, 0);
@@ -84,7 +84,13 @@ public class SnailScript : MonoBehaviour
                     stunned = true;
 
 
-                    // BEETLE CODE HERE
+                    // BEETLE Etkileşimleri
+
+                    if (tag == MyTags.BEETLE_TAG)
+                    {
+                        anim.Play("Stunned");
+                        StartCoroutine(Dead(0.5f));
+                    }
                 }
             }
         }
@@ -98,11 +104,15 @@ public class SnailScript : MonoBehaviour
 
                 {
                     // Apply damage to player
-                    print("Damage Left");
+                   
                 }
                 else
                 {
-                    myBody.velocity = new Vector2(15f, myBody.velocity.y);
+                    if (tag != MyTags.BEETLE_TAG)
+                    {
+                        myBody.velocity = new Vector2(15f, myBody.velocity.y);
+                        StartCoroutine(Dead(3f));
+                    }
                 }
             }
         }
@@ -114,18 +124,23 @@ public class SnailScript : MonoBehaviour
                 if (!stunned)
                 {
                     // Apply damage to Player
-                    print("Damage Right");
+                    
                 }
                 else
                 {
-                    myBody.velocity = new Vector2(-15f, myBody.velocity.y);
+                    if (tag != MyTags.BEETLE_TAG)
+                    {
+                        myBody.velocity = new Vector2(-15f, myBody.velocity.y);
+                        StartCoroutine(Dead(3f));
+
+                    }
                 }
             }
         }
 
         // Eğer Collision yok ise  ne yapılacak {}
 
-        if (!Physics2D.Raycast(down_Collision.position, Vector2.down, .1f))
+        if (!Physics2D.Raycast(bottom_Collision.position, Vector2.down, .1f))
         {
             ChangeDirection();
         }
@@ -153,5 +168,13 @@ public class SnailScript : MonoBehaviour
             right_Collision.position = left_Collision_Pos;
         }
         transform.localScale = tempScale;
+    }
+
+
+
+    IEnumerator Dead(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        gameObject.SetActive(false);
     }
 }
