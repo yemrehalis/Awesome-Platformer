@@ -770,25 +770,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3259309625246021873, guid: 2692cf276f864479d93aef1ba02a32f0,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0045872927
-      objectReference: {fileID: 0}
-    - target: {fileID: 3259309625246021873, guid: 2692cf276f864479d93aef1ba02a32f0,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.1708252
-      objectReference: {fileID: 0}
     - target: {fileID: 3259309625246021882, guid: 2692cf276f864479d93aef1ba02a32f0,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3259309625246021884, guid: 2692cf276f864479d93aef1ba02a32f0,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3259309625246021887, guid: 2692cf276f864479d93aef1ba02a32f0,
         type: 3}
@@ -1067,12 +1052,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &1368291798 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5300055551498651603, guid: 3641a88c55647441b93eb2c681a25a71,
-    type: 3}
-  m_PrefabInstance: {fileID: 5300055550164499973}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1462865437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,11 +1484,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snail
       objectReference: {fileID: 0}
-    - target: {fileID: 5300055549684856018, guid: 3641a88c55647441b93eb2c681a25a71,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5300055549684856024, guid: 3641a88c55647441b93eb2c681a25a71,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1565,10 +1539,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5300055549684856029, guid: 3641a88c55647441b93eb2c681a25a71,
+    - target: {fileID: 5300055549684856031, guid: 3641a88c55647441b93eb2c681a25a71,
         type: 3}
-      propertyPath: bottom_Collision
-      value: 
-      objectReference: {fileID: 1368291798}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3641a88c55647441b93eb2c681a25a71, type: 3}

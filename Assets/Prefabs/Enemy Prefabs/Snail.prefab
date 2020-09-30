@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5300055549684856029}
   m_Layer: 0
   m_Name: Snail
-  m_TagString: Untagged
+  m_TagString: Snail
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,7 +174,7 @@ MonoBehaviour:
   left_Collision: {fileID: 5300055549718744917}
   right_Collision: {fileID: 5300055551177505041}
   top_Collision: {fileID: 5300055550778805349}
-  down_Collision: {fileID: 5300055551498651603}
+  bottom_Collision: {fileID: 5300055551498651603}
 --- !u!1 &5300055549718744906
 GameObject:
   m_ObjectHideFlags: 0
