@@ -16,8 +16,11 @@ public class PlayerShoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            GameObject bullet = Instantiate(fireBullet, transform.position,Quaternion.identity);
-            bullet.GetComponent<FireBullet>().Speed *= transform.localScale.x;
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                GameObject bullet = Instantiate(fireBullet, transform.position, Quaternion.identity);
+                bullet.GetComponent<FireBullet>().Speed *= transform.localScale.x; 
+            }
         }
     }
 }
