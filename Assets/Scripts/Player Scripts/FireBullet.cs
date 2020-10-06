@@ -59,13 +59,13 @@ public class FireBullet : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D target)
     {
-        if (collision.gameObject.tag == MyTags.BEETLE_TAG || collision.gameObject.tag == MyTags.SNAIL_TAG)
+        if (target.gameObject.tag == MyTags.BEETLE_TAG || target.gameObject.tag == MyTags.SNAIL_TAG)
         {
             anim.Play("Explode");
             canMove = false;
-            StartCoroutine(DisableBullet(.1f));
+            StartCoroutine(DisableBullet(.2f));
         }
     }
 }

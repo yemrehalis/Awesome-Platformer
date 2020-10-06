@@ -430,7 +430,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.5707547, g: 0.80922425, b: 1, a: 1}
+  m_BackGroundColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1492,7 +1492,7 @@ PrefabInstance:
     - target: {fileID: 5300055549684856024, guid: 3641a88c55647441b93eb2c681a25a71,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.34
+      value: -3.35
       objectReference: {fileID: 0}
     - target: {fileID: 5300055549684856024, guid: 3641a88c55647441b93eb2c681a25a71,
         type: 3}
@@ -1539,10 +1539,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5300055549684856024, guid: 3641a88c55647441b93eb2c681a25a71,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5300055549684856024, guid: 3641a88c55647441b93eb2c681a25a71,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5300055549684856031, guid: 3641a88c55647441b93eb2c681a25a71,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3641a88c55647441b93eb2c681a25a71, type: 3}
